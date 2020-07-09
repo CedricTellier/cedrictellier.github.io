@@ -1,4 +1,4 @@
-<template id="project">
+<template>
   <div class="projects">
     <h1>This is a Project page</h1>
     <ReturnButton></ReturnButton>
@@ -44,3 +44,7 @@
     }
   }
 </script>
+
+<style scoped>
+
+</style>
