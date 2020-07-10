@@ -2,9 +2,7 @@
   <div class="contact">
     <h1>This is a Contact page</h1>
     <ReturnButton></ReturnButton>
-      <a href="test.png" download="logo">
-        <img src="test.png" alt="test" />
-      </a>
+    <v-btn href="curriculum.pdf" @click="navigate" class="primary" download="cv_cedric_tellier">Download CV!</v-btn>
   </div>
 </template>
 
