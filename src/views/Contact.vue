@@ -127,7 +127,6 @@ import ReturnButton from "@/components/ReturnButton.vue";
 // import  email from 'emailjs';
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
-
 export default {
   name: "Contact",
   components: {
