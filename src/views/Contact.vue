@@ -121,11 +121,12 @@
     </form>
   </div>
 </template>
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
 import ReturnButton from "@/components/ReturnButton.vue";
 // import  email from 'emailjs';
 var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
 
 export default {
   name: "Contact",
@@ -158,26 +159,17 @@ export default {
   methods: {
     submit: function() {
       this.submitted = true;
-      // const client = new email.server.connect({
-      // user: 'cedric.tellier25@gmail.com',
-      // password: 'Claire1992',
-      // host: 'smtp.gmail.com',
-      // ssl: true,
-      // port:465
-      // });
- 
-      // client.send({
-      //   text: 'i hope this works',
-      //   from: 'Coucou',
-      //   to: 'cedric <cedric.tellier@yahoo.fr>',
-      //   cc: 'test',
-      //   subject: 'testing emailjs'
-      // },
-      // (err, message) => {
-      //     console.log(err || message);
-      // })
+      var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+      Email.send({
+        SecureToken : "e08927f5-cf11-4d67-890a-f719f24b136d",
+        To : 'cedric.tellier@yahoo.fr',
+        From : "cedric.tellier25@gmail.com",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+      }).then(
+        message => alert(message)
+      );
     },
-    
     // validate by type and value
     validate: function(type, value) {
       if (type === "email") {
