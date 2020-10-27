@@ -28,7 +28,7 @@
         github_request:  "https://api.github.com/users/CedricTellier/repos"
       }
     },
-    mounted () {
+    beforeMount () {
       Axios
       .get(this.github_request)
       .then(response => {
