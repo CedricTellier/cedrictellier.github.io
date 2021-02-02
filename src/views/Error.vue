@@ -4,7 +4,7 @@
         <h1>
           <div>In Progress Website</div>
         </h1>
-        <p>You've landed on a URL that is still in progress... We will be back soon</p>
+        <p>You've landed on a URL that is currently in progress... We will be back soon</p>
     </div>
   <img src="https://css-tricks.com/wp-content/themes/CSS-Tricks-17/images/ripped.jpg" alt class />
   </div>
