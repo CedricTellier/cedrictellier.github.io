@@ -1,4 +1,4 @@
-# cedrictellier.github.io personnal website
+# cedrictellier.github.io
 
 ## Project setup
 ```
